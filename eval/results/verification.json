@@ -1,0 +1,68 @@
+{
+  "provenance": {
+    "measured_at_utc": "2026-10-27T02:28:14.566718+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "c7f285fac6a83fbd707aba0bf6a3fcbd7a5f5f7117afbaa49b96ea5346fb69a8",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "tests": {
+    "total": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_file": "tests.xml",
+    "warnings": "3 FAISS/SWIG deprecation warnings"
+  },
+  "checks": {
+    "javascript_syntax": "passed",
+    "python_compileall": "passed",
+    "pip_check": "passed",
+    "git_diff_check": "passed"
+  },
+  "real_retrieval": {
+    "status": "passed",
+    "corrupt_faiss_index_rejected": true,
+    "evidence_file": "real-retrieval-smoke.json"
+  },
+  "planner": {
+    "cases": 36,
+    "known_feasible": 14,
+    "incorrect_feasible_recommendations": 0,
+    "missed_valid_options": 0
+  },
+  "browser": {
+    "status": "observed_pass",
+    "workflow": [
+      "upload_fictional_classes",
+      "recommend_with_availability",
+      "save_plan",
+      "download_and_parse_actual_ics",
+      "change_source_time",
+      "revalidate_and_block_export",
+      "search_page_evidence",
+      "responsive_no_horizontal_overflow"
+    ],
+    "mobile_css_viewport_px": 375,
+    "screenshots_directory": "docs/screenshots"
+  },
+  "external_unverified": [
+    "specific_desktop_MCP_host",
+    "actual_university_feed_and_documents",
+    "local_GGUF_generation",
+    "hosted_CI",
+    "non_Windows_run"
+  ],
+  "user_impact": {
+    "status": "unmeasured",
+    "participants": 0
+  }
+}

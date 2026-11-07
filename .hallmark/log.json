@@ -1,0 +1,30 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "theme": "overprint",
+  "shape": "app screen",
+  "genre": "playful",
+  "axes": "light/grotesk-heavy/cool",
+  "hero": "none (app scope)",
+  "nav": "compact four-destination masthead",
+  "footer": "local-workspace colophon",
+  "imagery": "working product; no photo slots",
+  "photos": [],
+  "entry": "intersecting task/explanation ink fields",
+  "fingerprint": "four-route-app/ruled-event-list/side-filters/two-ink-heading/local-fonts/still",
+  "sections": [
+   "task heading",
+   "filters and ruled event list",
+   "document evidence",
+   "availability import and stored intervals",
+   "plans and approved context"
+  ],
+  "signature": "teal task and orange explanation surfaces overlap without type in the join",
+  "waived": [],
+  "prompt": "Redesign the CampusAssistant frontend with Hallmark's Overprint theme; preserve the student planning and context workflow; communicate in English.",
+  "preserved": "26 original IDs, 20 named fields, four routes, all privacy and consent statements",
+  "date": "2026-11-07"
+ }
+]

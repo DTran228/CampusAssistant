@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CampusScout//Fictional fixtures//EN
+BEGIN:VEVENT
+UID:fictional-class
+DTSTART;TZID=America/New_York:20261026T140000
+DTEND;TZID=America/New_York:20261026T153000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU;COUNT=10
+SUMMARY:Fictional class - title will not be stored
+END:VEVENT
+END:VCALENDAR

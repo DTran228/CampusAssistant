@@ -1,0 +1,165 @@
+{
+  "provenance": {
+    "measured_at_utc": "2026-10-27T02:26:14.814809+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "c7f285fac6a83fbd707aba0bf6a3fcbd7a5f5f7117afbaa49b96ea5346fb69a8",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "backend": "all-mpnet-base-v2 + FAISS IndexFlatL2",
+  "scope": "Small real-model smoke, not retrieval quality or real-campus validation",
+  "model_load_and_index_ms": 34428.78230000497,
+  "status": "passed",
+  "index": {
+    "status": "ok",
+    "revision": "4974bcf275b5e173fefd98a2",
+    "backend": "mpnet",
+    "chunks": 8
+  },
+  "queries": [
+    {
+      "query": "When does the library open on weekdays?",
+      "expected_source": "library",
+      "expected_page": 1,
+      "hit_at_3": true,
+      "latency_ms": 111.21919998549856,
+      "excerpts": [
+        {
+          "id": "a8400960d7ffb9fc00989178f5d65674d464654ab9fa353c97231b0743424bb2",
+          "source_id": "library",
+          "title": "Fictional Library Guide",
+          "url": "fixture://library-guide",
+          "category": "library",
+          "page": 1,
+          "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk.",
+          "content_hash": "a5004adb91d2d66ec62e0668512ed1cf4c01feaaf3df8b3d1ed03551ec976c79",
+          "evidence_id": "E1",
+          "score": 0.8127
+        },
+        {
+          "id": "a26b3b24eb866f73da8d91b8aaac8a7ddabae44831c46ff065a6519d297c1cb6",
+          "source_id": "library",
+          "title": "Fictional Library Guide",
+          "url": "fixture://library-guide",
+          "category": "library",
+          "page": 2,
+          "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist.",
+          "content_hash": "5f6203642767d42918924bc40bef95aa10c6dcbfdc5edd2440563ee07eae7d71",
+          "evidence_id": "E2",
+          "score": 0.3864
+        },
+        {
+          "id": "d4882059c4d78799b16e1596af4caea82d7fed9a4b8cbbd3abdbab1b8199e9cf",
+          "source_id": "career",
+          "title": "Fictional Career Center Handbook",
+          "url": "fixture://career-handbook",
+          "category": "career",
+          "page": 1,
+          "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles.",
+          "content_hash": "7a0cbae366f08a18130affdd45744d6d1ac025a9c5166cdcd0e9dcbf42716e7a",
+          "evidence_id": "E3",
+          "score": 0.3192
+        }
+      ]
+    },
+    {
+      "query": "How long can students use a group study room?",
+      "expected_source": "library",
+      "expected_page": 2,
+      "hit_at_3": true,
+      "latency_ms": 78.63890001317486,
+      "excerpts": [
+        {
+          "id": "a26b3b24eb866f73da8d91b8aaac8a7ddabae44831c46ff065a6519d297c1cb6",
+          "source_id": "library",
+          "title": "Fictional Library Guide",
+          "url": "fixture://library-guide",
+          "category": "library",
+          "page": 2,
+          "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist.",
+          "content_hash": "5f6203642767d42918924bc40bef95aa10c6dcbfdc5edd2440563ee07eae7d71",
+          "evidence_id": "E1",
+          "score": 0.6482
+        },
+        {
+          "id": "df3f40b2a4a65f5fe0e3209eef625805df90a56e8838187b1e31af4079a92e57",
+          "source_id": "wellbeing",
+          "title": "Fictional Student Services",
+          "url": "fixture://student-services",
+          "category": "services",
+          "page": 1,
+          "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements.",
+          "content_hash": "b02f7b708e1620996c9dfe2c69d4c68f6fd84c7ec2e9405c14385cb5b3c6118e",
+          "evidence_id": "E2",
+          "score": 0.4121
+        },
+        {
+          "id": "08b71d7f4bcbd4ecd7421db475172a7ed544fd42449d87b635547bbe0c4cc6b0",
+          "source_id": "wellbeing",
+          "title": "Fictional Student Services",
+          "url": "fixture://student-services",
+          "category": "services",
+          "page": 2,
+          "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests.",
+          "content_hash": "56d510680085d0a08c475c5bde940c8a11c6e031261aa7bfcd7a3797bfe19a7d",
+          "evidence_id": "E3",
+          "score": 0.407
+        }
+      ]
+    },
+    {
+      "query": "Where do I request a transcript?",
+      "expected_source": "registrar",
+      "expected_page": 2,
+      "hit_at_3": true,
+      "latency_ms": 73.60249999328516,
+      "excerpts": [
+        {
+          "id": "32b41c969e4fe2ba9832ff5488e16f57ccfbecfc86ef75fab207e7555a786881",
+          "source_id": "registrar",
+          "title": "Fictional Registrar Guide",
+          "url": "fixture://registrar-guide",
+          "category": "academic",
+          "page": 2,
+          "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy.",
+          "content_hash": "90e9df9536f53a084954467fb7a93c1680c78083632f28336b11536c5c56fa81",
+          "evidence_id": "E1",
+          "score": 0.5105
+        },
+        {
+          "id": "df3f40b2a4a65f5fe0e3209eef625805df90a56e8838187b1e31af4079a92e57",
+          "source_id": "wellbeing",
+          "title": "Fictional Student Services",
+          "url": "fixture://student-services",
+          "category": "services",
+          "page": 1,
+          "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements.",
+          "content_hash": "b02f7b708e1620996c9dfe2c69d4c68f6fd84c7ec2e9405c14385cb5b3c6118e",
+          "evidence_id": "E2",
+          "score": 0.3268
+        },
+        {
+          "id": "d4882059c4d78799b16e1596af4caea82d7fed9a4b8cbbd3abdbab1b8199e9cf",
+          "source_id": "career",
+          "title": "Fictional Career Center Handbook",
+          "url": "fixture://career-handbook",
+          "category": "career",
+          "page": 1,
+          "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles.",
+          "content_hash": "7a0cbae366f08a18130affdd45744d6d1ac025a9c5166cdcd0e9dcbf42716e7a",
+          "evidence_id": "E3",
+          "score": 0.3043
+        }
+      ]
+    }
+  ],
+  "corrupt_faiss_index_rejected": true
+}

@@ -1,0 +1,16 @@
+{
+  "scanned": "2026-11-07",
+  "findings": {
+    "framework": "Flask/Jinja, shared templates/index.html:1; vanilla static/js/script1.js:1",
+    "palette": "Green/sage defaults in static/css/style.css:1; no locked design or brand specification",
+    "fonts": "System UI stack in static/css/style.css:1; no existing font assets",
+    "spacing": "Raw pixel lengths in static/css/style.css:1",
+    "motion": "Background hover transition only in static/css/style.css:1",
+    "product": "Four working app screens: /events, /ask, /availability, /plan",
+    "checkout": "Existing dirty dev checkout is authorized ongoing project work; original frontend files copied to .hallmark/before-source without modifying git state"
+  },
+  "preserve": ["CampusScout name", "all four routes", "form fields and IDs", "request handlers", "source provenance", "consent/privacy wording", "existing plan/MCP workflow"],
+  "introduce": ["Overprint newsprint theme requested by user", "self-hosted Anybody and Archivo fonts", "central design tokens", "compact app composition", "square controls and ruled event listings"],
+  "material": "Existing fictional events, source-linked document excerpts and real app controls; no stock photos, metrics, quotes or logos added",
+  "scope": "app"
+}

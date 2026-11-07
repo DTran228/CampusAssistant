@@ -1,0 +1,7 @@
+source_event_id,title,description,source_url,organizer,location,timezone,start,end,status,categories,cost,registration_deadline,free_food,dietary
+career-1,Resume workshop,Practice resume writing with the fictional Career Center.,https://demo.example/events/resume,Fictional Career Center,Library 101,America/New_York,2026-10-27T14:00:00-04:00,2026-10-27T15:00:00-04:00,active,career;workshop,0,,unknown,unknown
+career-2,Interview practice lab,Mock interviews and career preparation.,https://demo.example/events/interview,Fictional Career Center,Student Hall,America/New_York,2026-10-28T16:00:00-04:00,2026-10-28T17:00:00-04:00,active,career;workshop,0,,absent,unknown
+tech-1,Python study group,Peer learning and programming.,https://demo.example/events/python,,,America/New_York,2026-10-29T17:00:00-04:00,2026-10-29T18:00:00-04:00,active,technology,0,,confirmed,unknown
+art-1,Campus art evening,Student art showcase.,https://demo.example/events/art,,,America/New_York,2026-10-30T18:00:00-04:00,2026-10-30T20:00:00-04:00,active,art,5,,unknown,unknown
+career-3,Career networking dinner,Registration price not yet published.,https://demo.example/events/dinner,,,America/New_York,2026-10-29T18:00:00-04:00,2026-10-29T19:30:00-04:00,active,career,,,unknown,unknown
+cancel-1,Cancelled internship panel,Explicit source cancellation.,https://demo.example/events/panel,,,America/New_York,2026-10-28T12:00:00-04:00,2026-10-28T13:00:00-04:00,cancelled,career,0,,unknown,unknown

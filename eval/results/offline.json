@@ -1,0 +1,1157 @@
+{
+  "provenance": {
+    "measured_at_utc": "2026-11-07T06:58:25.989210+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "2a705c3b84a24c76045de975d628109e2e2e2903778437fdae270c6b7df2c017",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "planner": {
+    "cases": 36,
+    "known_feasible": 14,
+    "incorrect_feasible_recommendations": 0,
+    "missed_valid_options": 0,
+    "rows": [
+      {
+        "id": "01-open",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "02-exact-overlap",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "03-class-covers",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "04-event-covers-class",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "05-left-overlap",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "06-right-overlap",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "07-adjacent-before",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "08-adjacent-after",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "09-buffer-before",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "10-buffer-after",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "11-exact-buffer-gap",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "12-insufficient-gap",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "13-cancelled",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "cancelled": 1
+        }
+      },
+      {
+        "id": "14-zero-price",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "15-paid",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "over_budget": 1
+        }
+      },
+      {
+        "id": "16-exact-budget",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "17-over-budget",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "over_budget": 1
+        }
+      },
+      {
+        "id": "18-unknown-budget",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "unknown_cost": 1
+        }
+      },
+      {
+        "id": "19-unknown-without-budget",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "20-food-unknown",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "food_not_confirmed": 1
+        }
+      },
+      {
+        "id": "21-food-absent",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "food_not_confirmed": 1
+        }
+      },
+      {
+        "id": "22-food-confirmed",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "23-dietary-unknown-not-inferred",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "24-registration-expired",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "registration_closed": 1
+        }
+      },
+      {
+        "id": "25-registration-at-now",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "registration_closed": 1
+        }
+      },
+      {
+        "id": "26-registration-open",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "27-event-before-range",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "outside_dates": 1
+        }
+      },
+      {
+        "id": "28-event-after-range",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "outside_dates": 1
+        }
+      },
+      {
+        "id": "29-start-boundary",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "30-end-boundary",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "31-already-started",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "outside_dates": 1
+        }
+      },
+      {
+        "id": "32-starts-now",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "33-multiple-clear-intervals",
+        "expected_feasible": true,
+        "recommended": true,
+        "correct": true,
+        "excluded_counts": {}
+      },
+      {
+        "id": "34-one-conflict-among-many",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "35-all-day-busy",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      },
+      {
+        "id": "36-offset-normalization",
+        "expected_feasible": false,
+        "recommended": false,
+        "correct": true,
+        "excluded_counts": {
+          "schedule_conflict": 1
+        }
+      }
+    ]
+  },
+  "retrieval": {
+    "backend": "demo_lexical",
+    "questions": 40,
+    "k": 3,
+    "metrics": {
+      "development": {
+        "answerable_count": 12,
+        "recall_at_3": 1.0,
+        "unanswerable_count": 4,
+        "unanswerable_abstention_rate": 0.75
+      },
+      "held_out": {
+        "answerable_count": 12,
+        "recall_at_3": 1.0,
+        "unanswerable_count": 4,
+        "unanswerable_abstention_rate": 1
+      }
+    },
+    "rows": [
+      {
+        "id": "c01",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "c02",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "c03",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "c04",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          },
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          }
+        ]
+      },
+      {
+        "id": "c05",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          }
+        ]
+      },
+      {
+        "id": "c06",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          },
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "c07",
+        "split": "development",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          },
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "c08",
+        "split": "development",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          },
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          }
+        ]
+      },
+      {
+        "id": "c09",
+        "split": "development",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "c10",
+        "split": "development",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          }
+        ]
+      },
+      {
+        "id": "l01",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          },
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          }
+        ]
+      },
+      {
+        "id": "l02",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          },
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          }
+        ]
+      },
+      {
+        "id": "l03",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          }
+        ]
+      },
+      {
+        "id": "l04",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          }
+        ]
+      },
+      {
+        "id": "l05",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "l06",
+        "split": "development",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          },
+          {
+            "source": "career",
+            "page": 1,
+            "text": "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles."
+          }
+        ]
+      },
+      {
+        "id": "l07",
+        "split": "development",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          }
+        ]
+      },
+      {
+        "id": "l08",
+        "split": "development",
+        "kind": "ambiguous",
+        "recall_at_3": 0.0,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "l09",
+        "split": "development",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "l10",
+        "split": "development",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "r01",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          }
+        ]
+      },
+      {
+        "id": "r02",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "r03",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          },
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          }
+        ]
+      },
+      {
+        "id": "r04",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          }
+        ]
+      },
+      {
+        "id": "r05",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          }
+        ]
+      },
+      {
+        "id": "r06",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          },
+          {
+            "source": "wellbeing",
+            "page": 1,
+            "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements."
+          }
+        ]
+      },
+      {
+        "id": "r07",
+        "split": "held_out",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          },
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          }
+        ]
+      },
+      {
+        "id": "r08",
+        "split": "held_out",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          },
+          {
+            "source": "career",
+            "page": 2,
+            "text": "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+          },
+          {
+            "source": "library",
+            "page": 1,
+            "text": "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk."
+          }
+        ]
+      },
+      {
+        "id": "r09",
+        "split": "held_out",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "r10",
+        "split": "held_out",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "s01",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 1,
+            "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements."
+          }
+        ]
+      },
+      {
+        "id": "s02",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 1,
+            "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "s03",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "registrar",
+            "page": 2,
+            "text": "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+          },
+          {
+            "source": "wellbeing",
+            "page": 1,
+            "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements."
+          },
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "s04",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          },
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          }
+        ]
+      },
+      {
+        "id": "s05",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "s06",
+        "split": "held_out",
+        "kind": "answerable",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          },
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          },
+          {
+            "source": "registrar",
+            "page": 1,
+            "text": "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed."
+          }
+        ]
+      },
+      {
+        "id": "s07",
+        "split": "held_out",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          },
+          {
+            "source": "library",
+            "page": 2,
+            "text": "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+          },
+          {
+            "source": "wellbeing",
+            "page": 1,
+            "text": "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements."
+          }
+        ]
+      },
+      {
+        "id": "s08",
+        "split": "held_out",
+        "kind": "ambiguous",
+        "recall_at_3": 1.0,
+        "abstained": false,
+        "returned_evidence": [
+          {
+            "source": "wellbeing",
+            "page": 2,
+            "text": "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+          }
+        ]
+      },
+      {
+        "id": "s09",
+        "split": "held_out",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      },
+      {
+        "id": "s10",
+        "split": "held_out",
+        "kind": "unanswerable",
+        "recall_at_3": null,
+        "abstained": true,
+        "returned_evidence": []
+      }
+    ],
+    "ground_truth_status": "Agent-authored, human-reviewable fixture annotations. No independent human validation; source-grouped split fixed before evaluation.",
+    "answer_support": "Not measured. Generation disabled; excerpts are not policy conclusions. Ambiguous questions are recorded separately, without claiming resolution."
+  },
+  "performance": {
+    "corpus": "8 fictional document pages/chunks, 6 events, recurring class fixture",
+    "sample_count": 50,
+    "state": "First call and subsequent warm calls; OS cache uncontrolled. This process already ingested/evaluated the corpus; not a cold-process measurement.",
+    "first_call_ms": {
+      "retrieval_ms": 3.8186000019777566,
+      "planning_ms": 1.961800007848069,
+      "total_ms": 5.780400009825826
+    },
+    "warm_median_ms": {
+      "retrieval_ms": 2.1756500063929707,
+      "planning_ms": 1.605749988812022,
+      "total_ms": 3.816750002442859
+    },
+    "raw_samples_ms": {
+      "retrieval_ms": [
+        2.533699997002259,
+        2.134000009391457,
+        2.158999996026978,
+        2.1641000057570636,
+        2.429100015433505,
+        2.1788000012747943,
+        2.1908000053372234,
+        2.096599986543879,
+        2.059099992038682,
+        2.1425999875646085,
+        2.09500000346452,
+        2.137100003892556,
+        2.7603000053204596,
+        2.13199999416247,
+        2.390699984971434,
+        2.172500011511147,
+        2.240800007712096,
+        2.1312999888323247,
+        2.0198999845888466,
+        2.08760000532493,
+        2.702300000237301,
+        2.166699996450916,
+        2.0827000262215734,
+        2.087300003040582,
+        2.0930999889969826,
+        2.249199984362349,
+        2.0714999991469085,
+        2.0807999826502055,
+        2.212499995948747,
+        2.039300015894696,
+        2.2119999921415,
+        2.0564000005833805,
+        3.0546000052709132,
+        2.2111000143922865,
+        2.310699986992404,
+        2.1985999774187803,
+        2.3193000233732164,
+        2.1357999939937145,
+        2.2354999964591116,
+        2.2687999880872667,
+        2.2409000084735453,
+        2.2594000038225204,
+        2.116500021656975,
+        2.261199988424778,
+        2.2735000238753855,
+        2.1982000034768134,
+        2.3458999930880964,
+        2.2465999936684966,
+        2.1172999986447394,
+        2.1691000147257
+      ],
+      "planning_ms": [
+        1.6536000184714794,
+        1.6767999914009124,
+        1.5921000158414245,
+        1.9927999819628894,
+        1.610599982086569,
+        1.625800010515377,
+        1.5424999874085188,
+        1.6251000051852316,
+        1.4971000200603157,
+        1.5542000182904303,
+        2.1874000085517764,
+        1.740099978633225,
+        1.6309999919030815,
+        2.2521000064443797,
+        2.1409000037238,
+        1.6654999926686287,
+        1.562199991894886,
+        1.5156999870669097,
+        1.4961000124458224,
+        2.313100005267188,
+        1.5322999970521778,
+        1.5703999961260706,
+        1.524099992820993,
+        2.003600005991757,
+        1.4983000000938773,
+        1.4993000077083707,
+        1.5320999955292791,
+        1.7407000123057514,
+        1.564300007885322,
+        1.537399977678433,
+        1.524399995105341,
+        1.7807999975048006,
+        1.6825000056996942,
+        1.6008999955374748,
+        1.6659999964758754,
+        2.349700022023171,
+        1.6004999924916774,
+        1.5774000203236938,
+        1.6212000045925379,
+        1.6795000119600445,
+        1.559099997393787,
+        1.59119997988455,
+        1.5125999925658107,
+        1.796900003682822,
+        1.579199975822121,
+        1.5734000189695507,
+        1.6586999990977347,
+        1.5611000126227736,
+        1.742499996908009,
+        1.6147999849636108
+      ],
+      "total_ms": [
+        4.187300015473738,
+        3.8108000007923692,
+        3.7511000118684024,
+        4.156899987719953,
+        4.039699997520074,
+        3.8046000117901713,
+        3.733299992745742,
+        3.7216999917291105,
+        3.556200012098998,
+        3.6968000058550388,
+        4.282400012016296,
+        3.877199982525781,
+        4.391299997223541,
+        4.38410000060685,
+        4.531599988695234,
+        3.8380000041797757,
+        3.802999999606982,
+        3.6469999758992344,
+        3.515999997034669,
+        4.400700010592118,
+        4.234599997289479,
+        3.7370999925769866,
+        3.6068000190425664,
+        4.090900009032339,
+        3.59139998909086,
+        3.7484999920707196,
+        3.6035999946761876,
+        3.821499994955957,
+        3.7768000038340688,
+        3.576699993573129,
+        3.736399987246841,
+        3.837199998088181,
+        4.737100010970607,
+        3.8120000099297613,
+        3.9766999834682792,
+        4.5482999994419515,
+        3.919800015864894,
+        3.713200014317408,
+        3.8567000010516495,
+        3.948300000047311,
+        3.800000005867332,
+        3.8505999837070704,
+        3.629100014222786,
+        4.0580999921076,
+        3.8526999996975064,
+        3.771600022446364,
+        4.004599992185831,
+        3.8077000062912703,
+        3.8597999955527484,
+        3.783899999689311
+      ]
+    },
+    "generation_ms": null,
+    "generation_status": "disabled, not measured",
+    "percentiles": "No p95 claim for this small workload."
+  },
+  "user_impact": {
+    "status": "unmeasured",
+    "participants": 0,
+    "time_savings": null
+  }
+}

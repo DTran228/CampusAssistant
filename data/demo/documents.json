@@ -1,0 +1,18 @@
+[
+  {"id":"career","title":"Fictional Career Center Handbook","url":"fixture://career-handbook","category":"career","pages":[
+    "The fictional Career Center offers resume reviews on Tuesdays from 2 to 4 pm. Students can book a 20 minute appointment through the Career Center desk. Bring a printed resume and a list of target roles.",
+    "Mock interviews last 30 minutes and require booking two business days ahead. Career workshops are open to all enrolled students. Contact the fictional Career Center for current availability."
+  ]},
+  {"id":"library","title":"Fictional Library Guide","url":"fixture://library-guide","category":"library","pages":[
+    "The fictional library opens weekdays from 8 am to 10 pm and weekends from 10 am to 6 pm. Exam week hours may change. Confirm current hours with the library desk.",
+    "Students may reserve a group study room for up to two hours per day. A campus ID is required to borrow books. Standard loans last 21 days and may be renewed once if no holds exist."
+  ]},
+  {"id":"registrar","title":"Fictional Registrar Guide","url":"fixture://registrar-guide","category":"academic","pages":[
+    "For the fictional fall term, the add drop deadline is September 10. Submit course changes through the registrar office. Late requests require an advisor consultation; approval is not guaranteed.",
+    "Official transcript requests are processed within five business days. The fictional registrar office handles enrollment verification. Scholarship eligibility questions go to Financial Aid. These fixtures do not establish real campus policy."
+  ]},
+  {"id":"wellbeing","title":"Fictional Student Services","url":"fixture://student-services","category":"services","pages":[
+    "Peer tutoring is free for enrolled students. Request a weekly tutoring session through the Learning Center. Accessibility accommodation requests go to Accessibility Services; contact that office for current documentation requirements.",
+    "The fictional recreation center provides equipment loans with a campus ID. Clubs can request meeting space from Student Activities seven days ahead. Only approved club organizers can submit room requests."
+  ]}
+]

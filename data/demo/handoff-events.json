@@ -1,0 +1,28 @@
+[
+  {
+    "source_event_id": "robotics-workshop",
+    "title": "Robotics workshop: build a rover",
+    "description": "A fictional hands-on robotics workshop for students.",
+    "source_url": "https://demo.example/events/robotics",
+    "organizer": "Fictional Robotics Club",
+    "location": "Maker Lab",
+    "timezone": "America/New_York",
+    "start": "2026-10-28T16:00:00-04:00",
+    "end": "2026-10-28T17:00:00-04:00",
+    "categories": ["robotics", "workshop"],
+    "cost": 0
+  },
+  {
+    "source_event_id": "robotics-alternative",
+    "title": "Robotics workshop: sensors lab",
+    "description": "A fictional alternative robotics workshop with sensor exercises.",
+    "source_url": "https://demo.example/events/sensors",
+    "organizer": "Fictional Robotics Club",
+    "location": "Maker Lab",
+    "timezone": "America/New_York",
+    "start": "2026-10-29T16:00:00-04:00",
+    "end": "2026-10-29T17:00:00-04:00",
+    "categories": ["robotics", "workshop"],
+    "cost": 0
+  }
+]

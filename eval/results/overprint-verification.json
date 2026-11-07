@@ -1,0 +1,213 @@
+{
+  "provenance": {
+    "measured_at_utc": "2026-11-07T08:08:44.087117+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "54e65b63760c1e43012e544f2e89dc82ea3ad88b77f5e40b55a662b4a125bbb6",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "frontend_sha256": {
+    "templates/index.html": "b6b91fadcc4088aa1f3c0d2fe441a70cec02aef17d6e7e5850cab481c7c60f1d",
+    "static/js/script1.js": "72022cfbfea8cce811b1e2bd4548db260e52689fa6ffc6f0dcac2b8b88f7e653",
+    "static/css/style.css": "342e9a11214302424c7b5271a31e6eb605e079b7d676db057d49e494f19dfe6a",
+    "static/css/base.css": "77607b88fde3d128ed144dc9d5e3d83d5da0ea6bdda4fb1ff89f6f0b864d9961",
+    "static/css/tokens.css": "04ed27a5fce6794ac716cf2b4b6025506edae349bd2ad111de35a16298b64d07"
+  },
+  "scope": "Full Hallmark Overprint redesign of four existing Flask app screens; English UI and handoff",
+  "runtime_dependencies_added": [],
+  "tooling": "puppeteer-core installed only under ignored .hallmark/tools for headless verification",
+  "tests": {
+    "tests": 75,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 1,
+    "seconds": 25.31,
+    "evidence": "overprint-tests.xml"
+  },
+  "post_review_web_checks": {
+    "passed": 3,
+    "failures": 0,
+    "javascript_syntax": "passed",
+    "git_diff_check": "passed"
+  },
+  "hallmark": {
+    "theme": "Overprint newsprint, by request",
+    "scope": "app",
+    "floor_failures": 0,
+    "open_reflex_findings": 0,
+    "waivers": 0,
+    "live_routes": [
+      "/events",
+      "/ask",
+      "/availability",
+      "/plan"
+    ],
+    "widths_checked": [
+      320,
+      375,
+      414,
+      768,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "captures": 20,
+    "kept": "kept: links 10/10, fields 20/20, headings 14/18 (4 dropped on record), figures 9/10; before 53 FAIL, 62 REFLEX, now 0 FAIL, 0 REFLEX",
+    "before_record_warnings": [
+      {
+        "gate": "kept",
+        "grade": "WARN",
+        "tier": "floor",
+        "file": ".hallmark\\before.json",
+        "line": 1,
+        "evidence": "figures gone or reworded since the before record: 00:00",
+        "fix": "Restore it, or record it in the stamp: /* Hallmark \u00b7 reworded \"<old>\" to \"<new>\" \u00b7 <the gate that named it> */ or dropped <item> \u00b7 <the reason>"
+      },
+      {
+        "gate": "kept",
+        "grade": "WARN",
+        "tier": "floor",
+        "file": ".hallmark\\before.json",
+        "line": 1,
+        "evidence": "not compared, because this run did not render them: templates\\index.html",
+        "fix": "Render the same pages or URLs the before record holds"
+      },
+      {
+        "gate": "kept",
+        "grade": "WARN",
+        "tier": "floor",
+        "file": ".hallmark\\before.json",
+        "line": 1,
+        "evidence": "not compared, because this run did not read them: templates\\index.html",
+        "fix": "Run --kept on the same target as --before"
+      }
+    ],
+    "warning_dispositions": [
+      "The old 00:00 figure token is timestamp/fixture formatting, not a removed event fact; backend timestamps and private calendar horizon remain.",
+      "Raw Jinja templates cannot render through file://; final visual audit uses all four live Flask routes with local CSS/fonts.",
+      "Original template IDs and field names were separately compared; all original 26 IDs and 20 field names remain. Runtime links 10/10 and fields 20/20 retained."
+    ]
+  },
+  "browser": {
+    "status": "passed",
+    "checks": {
+      "local_fonts": true,
+      "calendar_aware_recommendation": true,
+      "source_disclosure_preserves_unknowns": true,
+      "save_selection": true,
+      "export_ics": true,
+      "review_and_save_context": true,
+      "context_survives_reload": true,
+      "clear_preserves_plans": true,
+      "calendar_upload": true,
+      "document_evidence": true,
+      "no_results": true,
+      "visible_error": true,
+      "mobile_width_and_keyboard_focus": true,
+      "no_javascript_errors": true,
+      "source_ids_and_field_names_preserved": true
+    },
+    "originalIds": 26,
+    "originalFieldNames": 20,
+    "missingIds": [],
+    "missingNames": []
+  },
+  "finish_review": {
+    "mode": "fresh-context subagent",
+    "verdict": "fix",
+    "findings": 2,
+    "resolved": 2,
+    "long_mobile_availability_title": "resolved at 320 and 375px",
+    "paired_numeric_filter_alignment": "resolved at 375 and 1440px; stacked at 320px",
+    "old_design_advantage_retained": "location, price and source links remain visible in event listings",
+    "measurements": [
+      {
+        "width": 320,
+        "route": "availability",
+        "title": "My availability",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": null
+      },
+      {
+        "width": 320,
+        "route": "events",
+        "title": "Explore events",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": 89.6875
+      },
+      {
+        "width": 375,
+        "route": "availability",
+        "title": "My availability",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": null
+      },
+      {
+        "width": 375,
+        "route": "events",
+        "title": "Explore events",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": 0
+      },
+      {
+        "width": 1440,
+        "route": "availability",
+        "title": "My availability",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": null
+      },
+      {
+        "width": 1440,
+        "route": "events",
+        "title": "Explore events",
+        "rightOverflow": 0,
+        "leftOverflow": 0,
+        "horizontalOverflow": false,
+        "inputMisalignment": 0
+      }
+    ]
+  },
+  "assets": {
+    "fonts": [
+      "Anybody",
+      "Archivo"
+    ],
+    "hosted": "same-origin static/fonts",
+    "licenses": [
+      "Anybody-OFL.txt",
+      "Archivo-OFL.txt"
+    ],
+    "photo_slots": 0
+  },
+  "screenshots": [
+    "docs/screenshots/overprint-events.png",
+    "docs/screenshots/overprint-plan.png",
+    "docs/screenshots/overprint-mobile.png"
+  ],
+  "comparison": ".hallmark/compare.html",
+  "limits": [
+    "Fictional demo data; no university branding or real-campus claim introduced",
+    "Private local app; no public deployment",
+    "No real user impact measured by this design verification"
+  ]
+}

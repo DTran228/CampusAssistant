@@ -1,0 +1,11 @@
+{
+  "status":"proposed_not_run",
+  "variants":[
+    {"id":"career-A","task":"Find a free career workshop in the next seven days that fits the supplied classes; verify its official source and export one selection."},
+    {"id":"career-B","task":"Find a free interview preparation session in the next seven days that fits an equivalent supplied schedule; verify source and export one selection."}
+  ],
+  "conditions":["manual_public_source_browsing","CampusScout"],
+  "orders":["AB","BA"],
+  "success_criteria":["interest/date/budget requirements satisfied","no class conflict","official source verified","selection recorded"],
+  "note":"Replace fictional sources with authorized public campus sources before recruitment and pilot task equivalence."
+}

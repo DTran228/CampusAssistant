@@ -1,129 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusAssistant</title>
-    <link rel="stylesheet" src="style.css">
-    <style>
-        /* Apply padding and box styling */
-        div {
-            padding: 50px;
-        }
-
-        /* Style for the first div box */
-        div:first-of-type {
-            border: 2px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        /* Styling for the chatBot */
-        .chatBot {
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        /* Styling for the header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-
-        /* Style for the close button */
-        #cross {
-            cursor: pointer;
-            color: red;
-            font-size: 18px;
-        }
-
-        /* Styling for chatbox */
-        .chatbox {
-            list-style-type: none;
-            padding: 0;
-            height: 300px;
-            overflow-y: auto;
-            border-bottom: 2px solid #ddd;
-            margin-bottom: 10px;
-        }
-
-        /* Styling for chat messages */
-        .chat-incoming p, .chat-outgoing p {
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .chat-incoming p {
-            background-color: #e2f0d9;
-            text-align: left;
-        }
-
-        .chat-outgoing p {
-            background-color: #d9e2f0;
-            text-align: right;
-        }
-
-        /* Styling for chat input */
-        .chat-input {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .chat-input textarea {
-            width: calc(100% - 60px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .chat-input button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .chat-input button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Find campus events, check class conflicts, and save a reviewed plan.">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <title>CampusScout | {{ campus }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preload" href="{{ url_for('static', filename='fonts/Archivo-Variable.ttf') }}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="{{ url_for('static', filename='fonts/Anybody-Variable.ttf') }}" as="font" type="font/ttf" crossorigin>
+  <script src="{{ url_for('static', filename='js/script1.js') }}" defer></script>
 </head>
-<body>
-    <div>
-        <p>Ask question related to CPT/OPT & Computer Science department</p>
-    </div>    
-    <div class="chatBot">
-        <header>
-            <h2>CampusAssistant - SUNY Poly</h2>
-            <span alt="Close" id="cross" onclick="cancel()">X</span>
-        </header>
-        <ul class="chatbox">
-            <li class="chat-incoming chat">
-                <p>Hey! How can I assist you today?</p>
-            </li>
-        </ul>
-        <div class="chat-input">
-            <textarea rows="1" cols="17" placeholder="Enter a message..."></textarea>
-            <button id="sendBTN">Send</button>
-        </div>
+<body data-view="{{ view }}" class="app-shell">
+<a class="skip" href="#main">Skip to content</a>
+<aside class="app-masthead">
+  <div class="identity"><a class="brand" href="/events">CampusScout</a><p class="campus">{{ campus }}</p></div>
+  <nav aria-label="Main navigation">
+  {% for path,label in [('events','Explore events'),('ask','Ask campus questions'),('availability','My availability'),('plan','My plan')] %}
+    <a href="/{{ path }}" {% if view==path %}aria-current="page"{% endif %}>{{ label }}</a>
+  {% endfor %}
+  </nav>
+</aside>
+<main id="main">
+  <div class="workspace-meta"><p class="badge">{% if demo_mode %}Fictional data / demo{% else %}Local campus workspace{% endif %}</p>{% if fixed_now %}<p class="clock">Reproducible demo clock: {{ fixed_now }} ({{ timezone }})</p>{% endif %}</div>
+  <div id="status" role="status" aria-live="polite"></div>
+  <noscript><p class="warning">Enable JavaScript to search, check your schedule, and manage saved plans in this local app.</p></noscript>
+  {% if view=='events' %}
+  <header class="screen-heading">
+    <h1>Explore events</h1>
+    <p class="intro">Discover events, check your classes, and build a plan that fits.</p>
+  </header>
+  <div class="events-workbench">
+    <form id="event-form" class="filters">
+      <div class="form-title"><h2>What fits your week?</h2><p class="hint">Hard constraints are always checked before ranking.</p></div>
+      <div class="field-grid">
+        <label>From<input type="date" name="start_date" value="{{ start_date }}" required></label>
+        <label>Until (exclusive)<input type="date" name="end_date" value="{{ end_date }}" required></label>
+        <label>Interests<input name="interests" value="career, workshop" placeholder="career, technology"></label>
+        <label>Maximum cost ($)<input type="number" name="max_cost" min="0" step="0.01" placeholder="Any / unknown allowed" value="0"></label>
+        <label>Time allowance (minutes)<input type="number" name="buffer_minutes" min="0" max="120" value="0"></label>
+        <label>My availability<select name="calendar_ref" id="calendar-select"><option value="">No calendar: schedule unchecked</option></select></label>
+      </div>
+      <input type="hidden" name="timezone" value="{{ timezone }}">
+      <div class="form-bottom"><label class="check"><input type="checkbox" name="free_food">Confirmed free food only</label><button type="submit">Find events</button></div>
+      <p class="hint">Dates use {{ timezone }}. Maximum 30 days. A time allowance is not calculated walking time. Unknown price does not qualify as free.</p>
+    </form>
+    <section class="workspace" aria-labelledby="events-heading">
+      <div class="results-heading"><h2 id="events-heading">Events for your schedule</h2><a href="/availability">Upload availability</a></div>
+      <p id="result-summary" class="muted"></p>
+      <div id="event-results" class="cards event-list"></div>
+      <details id="excluded-panel"><summary>Why other events were excluded</summary><div id="excluded"></div></details>
+      <div class="selection-bar"><p id="selection-count">Choose up to 5 events. Selected events are checked against each other.</p><button id="save-selection" type="button">Save to my plan</button><button id="export-selection" class="secondary" type="button">Export selection (.ics)</button></div>
+      <p class="hint">Export downloads a file. It does not modify your calendar or register attendance.</p>
+    </section>
+  </div>
+  {% elif view=='ask' %}
+  <header class="screen-heading">
+    <h1>Ask campus questions</h1>
+    <p class="intro">Search campus documents with page references and source excerpts.</p>
+  </header>
+  <section class="workspace search-workspace" aria-label="Campus document search">
+    <form id="search-form" class="query-form">
+      <label>Your campus question<input name="query" required minlength="2" maxlength="1000" placeholder="How long can I reserve a group study room?"></label>
+      <div class="form-bottom">
+        <label>Category<select name="category"><option value="">All documents</option><option>career</option><option>library</option><option value="academic">academic</option><option>services</option></select></label>
+        <button type="submit">Search documents</button>
+      </div>
+    </form>
+    <div id="answer" class="answer" aria-live="polite"></div>
+    <div id="evidence" class="cards evidence-list"></div>
+    <p class="hint">Fictional documents do not establish real policy. Confirm current guidance with the responsible office. Generated answers, when enabled, need factual review. No immigration or legal eligibility decisions.</p>
+  </section>
+  {% elif view=='availability' %}
+  <section class="screen-heading">
+    <h1>My availability</h1>
+    <p class="intro">Upload your classes once. We keep busy intervals, discard the file and event titles, and check only the dates you choose.</p>
+  </section>
+  <div class="availability-workbench">
+    <form id="calendar-form" class="workspace">
+      <div class="section-heading"><h2>Import availability</h2></div>
+      <div class="field-grid">
+        <label>Calendar (.ics, max 1 MiB)<input type="file" name="calendar" accept=".ics,text/calendar" required></label>
+        <label>Timezone for floating / all-day times<input name="timezone" value="{{ timezone }}" required></label>
+        <label>From<input type="date" name="start_date" value="{{ start_date }}" required></label>
+        <label>Until (exclusive)<input type="date" name="end_date" value="{{ end_date }}" required></label>
+      </div>
+      <p class="hint">Maximum 30 days. Daily, weekly, monthly and yearly recurrences, exceptions and moved classes are supported. Unsupported forms return an error.</p>
+      <div class="form-bottom"><button type="submit">Import busy intervals</button></div>
+    </form>
+    <section class="availability-stored" aria-labelledby="stored-availability-heading">
+      <div class="section-heading"><h2 id="stored-availability-heading">Stored availability</h2></div>
+      <div id="calendar-list" class="cards availability-list"></div>
+    </section>
+  </div>
+  <section class="workspace pairing" aria-labelledby="pairing-heading">
+    <div class="section-heading"><h2 id="pairing-heading">Connect a local MCP client</h2></div>
+    <p>Pairing explicitly shares this session's availability and plans with a local MCP profile. The code is one-use and expires in 10 minutes.</p>
+    <div class="form-bottom"><button id="pair-button" class="secondary" type="button">Create private pairing code</button></div>
+    <output id="pair-code"></output>
+  </section>
+  {% elif view=='plan' %}
+  <section class="screen-heading">
+    <h1>My plan</h1>
+    <p class="intro">Every refresh checks current event revisions and your saved availability. Changes need your review; alternatives never replace your choices automatically.</p>
+  </section>
+  <div class="plan-workbench">
+    <div class="plan-content">
+      <div class="form-bottom plan-toolbar">
+        <a class="button" href="/events">Explore more events</a>
+        <button id="refresh-plans" class="secondary" type="button">Recheck saved plans</button>
+      </div>
+      <div id="plan-list" class="cards plans"></div>
     </div>
-
-<!--    <script src="script1.js" defer></script>-->
-    <script src="{{ url_for('static', filename='js/script1.js') }}" defer></script>
-
+    <section class="workspace context-workspace" aria-labelledby="context-heading">
+      <h2 id="context-heading">Context shared with your paired assistants</h2>
+      <p>Only the summary, interests and selected event references below are shared. Your full chat and raw class calendar are excluded. A paired assistant can use the linked plan to check your stored availability.</p>
+      <div id="shared-context" aria-live="polite"></div>
+      <button id="clear-context" class="secondary danger" type="button">Clear shared context</button>
+      <form id="context-form" hidden>
+        <h3>Review before sharing</h3>
+        <label>Short summary (up to 1000 characters)<textarea name="summary" rows="3" maxlength="1000" required></textarea></label>
+        <label>Interests to remember (comma separated)<input name="preferences" maxlength="1619" placeholder="robotics, workshop"></label>
+        <label>Saved plan to share<select name="plan_ref" id="context-plan" required></select></label>
+        <pre id="context-selection"></pre>
+        <label class="check"><input name="reviewed" type="checkbox" required>I reviewed this summary, interests and event selection and want paired assistants to remember them.</label>
+        <button type="submit">Save approved context</button>
+      </form>
+    </section>
+  </div>
+  <p class="hint">To review a changed event, read its current details in Explore events and save a new selection. Export rechecks revisions immediately and blocks conflicts or stale sources.</p>
+  {% endif %}
+  <footer>
+    <div><strong>CampusScout</strong><p>Source-backed discovery, deterministic planning.</p><p>Local workspace / no automatic refresh</p></div>
+    <div><strong>Local by design</strong><p>Your calendar stays in this local workspace. You choose what to export.</p></div>
+  </footer>
+</main>
 </body>
 </html>

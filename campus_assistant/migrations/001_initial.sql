@@ -1,0 +1,14 @@
+CREATE TABLE profiles (id TEXT PRIMARY KEY, kind TEXT NOT NULL);
+CREATE TABLE web_sessions (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), csrf TEXT NOT NULL);
+CREATE TABLE pairings (token_hash TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), expires_at TEXT NOT NULL);
+CREATE TABLE document_revisions (id TEXT PRIMARY KEY, backend TEXT NOT NULL, metadata_path TEXT NOT NULL, index_path TEXT, created_at TEXT NOT NULL);
+CREATE TABLE active_index (singleton INTEGER PRIMARY KEY CHECK(singleton=1), revision_id TEXT NOT NULL REFERENCES document_revisions(id));
+CREATE TABLE document_sources (id TEXT PRIMARY KEY, title TEXT NOT NULL, url TEXT NOT NULL, category TEXT NOT NULL);
+CREATE TABLE document_chunks (id TEXT NOT NULL, revision_id TEXT NOT NULL REFERENCES document_revisions(id), source_id TEXT NOT NULL REFERENCES document_sources(id), page INTEGER NOT NULL, text TEXT NOT NULL, content_hash TEXT NOT NULL, PRIMARY KEY(id, revision_id));
+CREATE TABLE event_sources (id TEXT PRIMARY KEY, title TEXT NOT NULL, url TEXT NOT NULL, kind TEXT NOT NULL, allowed_host TEXT, allow_local_fixture INTEGER NOT NULL DEFAULT 0, last_success TEXT, last_attempt TEXT, last_error TEXT);
+CREATE TABLE events (id TEXT PRIMARY KEY, source_id TEXT NOT NULL REFERENCES event_sources(id), source_event_id TEXT NOT NULL, revision INTEGER NOT NULL, data TEXT NOT NULL, retrieved_at TEXT NOT NULL, UNIQUE(source_id,source_event_id));
+CREATE TABLE event_revisions (event_id TEXT NOT NULL REFERENCES events(id), revision INTEGER NOT NULL, data TEXT NOT NULL, recorded_at TEXT NOT NULL, PRIMARY KEY(event_id,revision));
+CREATE TABLE calendars (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), timezone TEXT NOT NULL, horizon_start TEXT NOT NULL, horizon_end TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE busy_intervals (calendar_id TEXT NOT NULL REFERENCES calendars(id) ON DELETE CASCADE, start TEXT NOT NULL, end TEXT NOT NULL);
+CREATE TABLE plans (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), calendar_id TEXT REFERENCES calendars(id) ON DELETE SET NULL, request TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE plan_items (plan_id TEXT NOT NULL REFERENCES plans(id) ON DELETE CASCADE, event_id TEXT NOT NULL REFERENCES events(id), revision INTEGER NOT NULL, PRIMARY KEY(plan_id,event_id));

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CampusScout//Fictional fixtures//EN
+BEGIN:VEVENT
+UID:fixture-feed-workshop
+DTSTART;TZID=America/New_York:20261028T160000
+DTEND;TZID=America/New_York:20261028T170000
+SUMMARY:HTTP fixture career workshop
+DESCRIPTION:Fictional public feed demo
+URL:https://demo.example/feed-workshop
+LOCATION:Demo Hall
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "transport": "official Python MCP SDK stdio subprocess clients; no desktop host",
+  "summary": "Remember my robotics workshop choice; recheck its time against my classes before export.",
+  "preferences": [
+    "robotics",
+    "workshop"
+  ],
+  "workshop": "Robotics workshop: build a rover",
+  "previous_start": "2026-10-28T20:00:00Z",
+  "current_start": "2026-10-27T18:15:00Z",
+  "saved_event_revision": 1,
+  "current_event_revision": 2,
+  "conflict_reasons": [
+    "schedule_conflict",
+    "source_changed"
+  ],
+  "conflict_explanation": "The current time of Robotics workshop: build a rover overlaps your stored class availability, including a 0-minute time allowance. Choose another option or review your availability; this event cannot be exported.",
+  "alternatives": [
+    "Robotics workshop: sensors lab"
+  ],
+  "checks": {
+    "independent_a_b": true,
+    "exact_context_resumed": true,
+    "failed_save_preserves_context": true,
+    "stale_write_denied": true,
+    "foreign_read_write_denied": true,
+    "cancelled_selection_preserved": true,
+    "clear_visible_to_fresh_client": true,
+    "clear_preserves_plan_calendar": true,
+    "reviewed_alternative_exported": true
+  },
+  "user_impact": {
+    "participants": 0,
+    "time_savings": null
+  },
+  "provenance": {
+    "measured_at_utc": "2026-11-07T06:59:14.998563+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "2a705c3b84a24c76045de975d628109e2e2e2903778437fdae270c6b7df2c017",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "approval": "scripted fictional fixture"
+}

@@ -1,0 +1,124 @@
+{
+  "handoff_date": "2026-11-07",
+  "provenance": {
+    "measured_at_utc": "2026-11-07T07:17:22.765643+00:00",
+    "base_commit": "32ddffe91443a8431181e80c53155a8ce9358b9d",
+    "working_tree_dirty": true,
+    "implementation_dataset_sha256": "54e65b63760c1e43012e544f2e89dc82ea3ad88b77f5e40b55a662b4a125bbb6",
+    "dataset_revision": "0f75132843dba2351d9583c9aa6c0912af2dcdc5e16e4f55ab597ab904db6117",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "configuration": {
+      "clock": "2026-10-26T16:00:00Z",
+      "generation": "disabled",
+      "campus": "fictional"
+    }
+  },
+  "checkout": {
+    "branch": "dev",
+    "preexisting_dirty_tree_preserved": true,
+    "new_dependencies": []
+  },
+  "baseline": {
+    "tests": 69,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 1,
+    "junit_file": "handoff-baseline.xml",
+    "environment_failures": "Initial restricted run: Windows temp directory denied; workspace basetemp run: loopback WinError 10013. Permitted offline run passed; no baseline software failures."
+  },
+  "offline_tests": {
+    "tests": 75,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 1,
+    "seconds": 21.64,
+    "junit_file": "handoff-tests.xml",
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q -m \"not real_retrieval\" --basetemp=tmp/handoff-final-check --junitxml=eval/results/handoff-tests.xml --tb=short"
+  },
+  "after_last_ui_text_change": {
+    "web_tests_passed": 3,
+    "javascript_syntax": "passed",
+    "browser_reload": "approved context persisted; event names/times/versions visible"
+  },
+  "implementation_failure_fixed": "Old baseline test hard-coded one migration; now compares the applied migration inventory and repeatability. Final suite passed.",
+  "checks": {
+    "pip_check": "passed",
+    "python_compileall": "passed",
+    "node_syntax": "passed",
+    "git_diff_check": "passed",
+    "documented_cli_demo_handoff": "passed: 6 base events + 2 robotics events imported",
+    "documented_cli_demo_change_workshop": "passed: 1 workshop revision updated"
+  },
+  "mcp": {
+    "status": "passed",
+    "clients": "independent official Python SDK sessions/server subprocesses A and B, foreign C and fresh post-clear client",
+    "evidence": "handoff.json",
+    "approval": "scripted fictional fixture",
+    "checks": {
+      "independent_a_b": true,
+      "exact_context_resumed": true,
+      "failed_save_preserves_context": true,
+      "stale_write_denied": true,
+      "foreign_read_write_denied": true,
+      "cancelled_selection_preserved": true,
+      "clear_visible_to_fresh_client": true,
+      "clear_preserves_plan_calendar": true,
+      "reviewed_alternative_exported": true
+    },
+    "desktop_host": "not tested"
+  },
+  "web": {
+    "http_review_save_clear_csrf_pairing_isolation": "passed",
+    "browser_context_save_and_reload": "observed pass on fictional fixture",
+    "browser_clear": "covered by HTTP integration; not clicked in browser",
+    "screenshot": "docs/screenshots/handoff-context.png"
+  },
+  "planner": {
+    "cases": 36,
+    "known_feasible": 14,
+    "incorrect_feasible_recommendations": 0,
+    "missed_valid_options": 0
+  },
+  "retrieval": {
+    "questions": 40,
+    "backend": "demo_lexical",
+    "metrics": {
+      "development": {
+        "answerable_count": 12,
+        "recall_at_3": 1.0,
+        "unanswerable_count": 4,
+        "unanswerable_abstention_rate": 0.75
+      },
+      "held_out": {
+        "answerable_count": 12,
+        "recall_at_3": 1.0,
+        "unanswerable_count": 4,
+        "unanswerable_abstention_rate": 1
+      }
+    },
+    "limits": "Agent-authored tiny lexical fixtures; not independent human or real-model quality validation"
+  },
+  "real_retrieval": {
+    "status": "not rerun; excluded from offline suite",
+    "historical_evidence": "real-retrieval-smoke.json and verification.json (October)"
+  },
+  "external_unverified": [
+    "specific desktop MCP host",
+    "actual university feed/documents",
+    "real student study",
+    "hosted CI",
+    "non-Windows run",
+    "local GGUF generation"
+  ],
+  "user_impact": {
+    "status": "unmeasured",
+    "participants": 0,
+    "time_savings": null,
+    "target_percent": 30,
+    "achieved_percent": null
+  }
+}
