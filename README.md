@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>CampusScout</h1>
+<h1>🎓 CampusScout</h1>
 <p><strong>Find campus events that fit your week.</strong></p>
 <p>Discover a workshop, check your classes, and pick up your plan in another assistant.</p>
 
@@ -21,7 +21,9 @@
 
 > **Start with the local demo.** The included campus, events, and documents are fictional. No university account, API key, or large model download is needed. Setup needs internet once; the default demo then runs offline.
 
-## Why CampusScout?
+<a id="why-campusscout" name="why-campusscout"></a>
+
+## 💡 Why CampusScout?
 
 Finding an interesting workshop is only half the task. You also need to know whether it fits your classes, whether its time has changed, and what you decided last time.
 
@@ -34,11 +36,15 @@ Finding an interesting workshop is only half the task. You also need to know whe
 
 Scheduling checks use Python rules. When an event changes, alternatives are suggestions for you to review; your saved choice is never replaced automatically.
 
-## Quick start
+<a id="quick-start" name="quick-start"></a>
+
+## 🚀 Quick start
 
 Use **Python 3.12** (3.11–3.13 are supported), Git to clone the project, and a browser. Chrome was used for the local UI checks.
 
-### Windows PowerShell
+<a id="windows-powershell" name="windows-powershell"></a>
+
+### 🪟 Windows PowerShell
 
 Use one PowerShell window for these commands. You do not need to activate the virtual environment.
 
@@ -102,7 +108,9 @@ Open the same localhost address. These commands and a Windows/Linux CI workflow 
 
 </details>
 
-## Try the workshop demo
+<a id="try-the-workshop-demo" name="try-the-workshop-demo"></a>
+
+## 🧭 Try the workshop demo
 
 Follow this path in the browser after starting the app:
 
@@ -115,7 +123,9 @@ Follow this path in the browser after starting the app:
 
 To download a calendar file, use **Export plan (.ics)** and import it into your calendar yourself. Export does not register attendance or modify an external calendar.
 
-### What if the organizer changes the time?
+<a id="what-if-the-organizer-changes-the-time" name="what-if-the-organizer-changes-the-time"></a>
+
+### 🔄 What if the organizer changes the time?
 
 Open a **second PowerShell window in the project folder** and run:
 
@@ -146,7 +156,9 @@ This is the web review screen with fictional records. [View the mobile layout](d
 
 Want to try document search too? In **Ask campus questions**, ask: **“How long can I reserve a group study room?”** Inspect the fictional library excerpt and page reference.
 
-## Continue in another assistant
+<a id="continue-in-another-assistant" name="continue-in-another-assistant"></a>
+
+## 🤝 Continue in another assistant
 
 MCP is the interface that lets a compatible assistant call the same local planner used by the website.
 
@@ -164,7 +176,9 @@ Read each preview and type `yes` to approve. The demo starts independent officia
 
 To connect an actual host or share the web session's profile, follow [MCP setup and one-time pairing](docs/MCP_SETUP.md). A specific desktop host remains a separate validation step.
 
-## Your data, your choice
+<a id="your-data-your-choice" name="your-data-your-choice"></a>
+
+## 🔒 Your data, your choice
 
 - **Local storage:** imported availability and saved plans live in SQLite under your chosen data directory. Raw calendar bytes and class titles are discarded after import.
 - **Explicit sharing:** you review the short summary, interests, and selected plan before a paired assistant can resume that context. Full chats and raw calendars are excluded from shared context.
@@ -173,7 +187,9 @@ To connect an actual host or share the web session's profile, follow [MCP setup 
 
 Sources refresh when explicitly requested. CampusScout does not provide automatic event monitoring, registration, or university-system access.
 
-## Questions and fixes
+<a id="questions-and-fixes" name="questions-and-fixes"></a>
+
+## 🛠️ Questions and fixes
 
 | Problem | What to check |
 | --- | --- |
@@ -184,7 +200,9 @@ Sources refresh when explicitly requested. CampusScout does not provide automati
 | **Export is blocked** | Open **My plan** and review source changes, conflicts, or source freshness. Recheck before selecting/exporting a current valid option. |
 | **`py` is not found** | Install Python 3.12 from [python.org](https://www.python.org/downloads/), reopen PowerShell, and retry. If you already have Python, use its full executable path to create `.venv`. |
 
-## For developers
+<a id="for-developers" name="for-developers"></a>
+
+## 💻 For developers
 
 The app is **Flask + SQLite + Jinja + vanilla JavaScript**. Web handlers and the stdio MCP server call shared Python services. The default document search is a clearly labeled lexical demo; MPNet/FAISS and local LLM generation are optional.
 
@@ -199,7 +217,9 @@ Recorded Windows checks: **75 offline tests passed**, with one optional real-mod
 
 For configuration, source import, model setup, API routes, and clean demo resets, use the [developer guide](docs/DEVELOPMENT.md).
 
-## Documentation
+<a id="documentation" name="documentation"></a>
+
+## 📚 Documentation
 
 | Looking for… | Start here |
 | --- | --- |
